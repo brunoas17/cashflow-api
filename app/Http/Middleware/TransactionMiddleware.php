@@ -16,7 +16,7 @@ class TransactionMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return DB::transaction(function () use ($next, $request) {
+        return DB::transaction(function() use($next, $request) {
             return $next($request);
         });
     }

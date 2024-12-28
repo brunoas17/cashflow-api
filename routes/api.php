@@ -5,12 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\ForceJsonResponseMiddleware;
+use App\Http\Controllers\NewsletterSubscriberController;
 
 Route::prefix('v1')->middleware([ForceJsonResponseMiddleware::class])->group(function () {
 
     Route::get('/', function() {
         return response()->json(['Organiza ai - Em construção' => '0.0.1', 'Laravel' => app()->version()], 200);
     });
+
+    Route::post('/newsletter', NewsletterSubscriberController::class);
 
     Route::get('/status', StatusController::class);
 

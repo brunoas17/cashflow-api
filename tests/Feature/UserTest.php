@@ -9,7 +9,7 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * test the user create route.
      */
     public function test_create_users_route_should_return_201(): void
     {
